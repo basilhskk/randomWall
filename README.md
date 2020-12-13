@@ -10,8 +10,6 @@ Add it on startup
 python3 addToStartup.py
 ``
 
-else 
-
 Run it 
 
 ``
