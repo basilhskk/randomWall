@@ -1,4 +1,4 @@
-# Wallpaper Changer
+# Random Wall
 
 ### Simple 30min python project
 
