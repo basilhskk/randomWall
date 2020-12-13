@@ -10,7 +10,7 @@ SPI_SETDESKWALLPAPER = 20
 width = GetSystemMetrics(0)
 height = GetSystemMetrics(1)
 
-dirLocation = os.path.abspath(os.getcwd())
+dirLocation = os.path.realpath(__file__).replace("\changeWallpaper.py","")
 imgLocation = os.path.join(dirLocation, "tmp.jpg")
 
 
@@ -19,13 +19,12 @@ def download_random():
     img = "https://picsum.photos/{0}/{1}".format(width,height)
     
     r = requests.get(img)
-
     with open(imgLocation ,"wb")as f:
         for chunk in r:
             f.write(chunk)
 
 
 if __name__ == "__main__":
-    download_random()    
+    download_random()
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, imgLocation, imgLocation , 0)
     print("Wallpaper Changed!")
