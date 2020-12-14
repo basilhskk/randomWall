@@ -26,5 +26,6 @@ def download_random():
 
 if __name__ == "__main__":
     download_random()
-    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, imgLocation, imgLocation , 0)
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, imgLocation, imgLocation , 3) # set last value to 0 if you don't want to make wallpaper permament
     print("Wallpaper Changed!")
+    os.remove(imgLocation)
